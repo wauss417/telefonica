@@ -1,0 +1,38 @@
+.oculto{
+  display: none;
+}
+#asientos{
+      position:relative;
+      background-color:grey;
+      margin:auto;
+      width:250px;
+      height:450px;
+      background-color:white;
+      display:grid;
+      grid-template-columns:2fr 50px 2fr;
+      grid-template-rows: 53px 53px 53px 53px 53px 53px 53px 53px;
+      grid-template-areas:"asientosL pasillo asientosR"
+                          "asientosL pasillo asientosR"
+                          "asientosL pasillo asientosR"
+                          "asientosL pasillo asientosR"
+                          "asientosL pasillo asientosR"
+                          "asientosL pasillo asientosR"
+                          "asientosL pasillo asientosR"
+                          "asientosL pasillo asientosR";
+}
+#asientosL{
+  grid-area:asientosL;
+}
+#pasillo{
+  grid-area:pasillo;
+}
+#asientosR{
+  grid-area:asientosR;
+}
+.asiento{
+  width: 45px;
+  height: 50px;
+}
+.libre, .seleccionado{
+  cursor:pointer;
+}
