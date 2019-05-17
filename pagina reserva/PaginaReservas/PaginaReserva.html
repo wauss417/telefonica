@@ -1,0 +1,197 @@
+<style>
+  #contenedor{
+        position:relative;
+        background-color:grey;
+        margin:auto;
+        width:250px;
+        height:450px;
+        background-color:white;
+        display:grid;
+        grid-template-columns:2fr 50px 2fr;
+        grid-template-rows: 53px 53px 53px 53px 53px 53px 53px 53px;
+        grid-template-areas:"asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR";
+
+      }
+      #asientosL{
+      /* background-color:#616161;*/
+        grid-area:asientosL;
+      }
+      #pasillo{
+        /*background-color:#757575;*/
+        grid-area:pasillo;
+      }
+
+      #asientosR{
+        /*background-color: #9e9e9e;*/
+        grid-area:asientosR;
+      }
+      #libre{
+      background-imgage:url("./asiento_libre.png");
+      }
+      #ocupado{
+        background-imgage:url("./asiento_reservado.png");
+      }
+      .asiento:hover{
+        cursor:pointer;
+
+      }
+
+  #formularioReserva{
+    position:absolute;
+    width:200px;
+    height:200px;
+    background-color:grey;
+    left:45%;
+  }
+</style>
+
+<html>
+<body onload="cargar();">
+    <div id="formularioReserva">
+      <form id="form" onsubmit="return false">
+      <p>Fecha salida: </p>
+      <select>
+      <option value="Fecha: ">Fecha: </option>
+      <option value="Fecha1">DD/MM//AA: </option>
+      <option value="Fecha2">DD/MM//AA: </option>
+      </select>
+      <br>
+      <p>Numero de asientos: </p>
+      <input type="number" id="numasientosreservados" name="quantity" min="1" max="5" value="numAsientos">
+      <br><br>
+      <button id="enviar" onClick="ElegirAsientos();">Elegir asientos</button>
+      </form>
+      </div>
+
+<div id="contenedor">
+<div id="asientosL">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+</div>
+<div id="pasillo"></div>
+<div id="asientosR">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+  <img src="./asiento_disponible.png" id="libre" class="asiento" width="45px" height="50px" onclick="CambiarClase(this);">
+
+</div>
+<button id="btn_reserva" onClick="Reserva();">Reservar</button>
+</div>
+</body>
+</html>
+
+<script>
+  var asientoslibres;
+  var asientosocupados;
+  var asientos = new Array();
+  var nReservados;
+  var asientosSeleccionados=0;
+  var puedeclick = true;
+
+  function cargar(){
+    document.getElementById("contenedor").style.display="none";
+    document.getElementById("btn_reserva").style.display="none";
+    //GUARDAR TODOS LOS ASIENTOS EN ARRAY
+    asientos = document.getElementsByClassName("asiento");
+  }
+  function CambiarClase(click){
+    parseInt(nReservados);
+    //COMPROBAR SI ES IGUAL EL NUMERO DE ASIENTOS SELECCIONADOS CON LOS RESERVADOS EN EL FORMULARIO
+    if(asientosSeleccionados< nReservados){
+      puedeclick=true;
+      //alert(asientosSeleccionados + nReservados);
+    }
+    else{
+      puedeclick=false;
+
+    }
+    if(click.id == "ocupado"){
+      asientosSeleccionados--;
+      click.id= "libre";
+      click.src="./asiento_disponible.png"
+      //alert(click.id);
+    }
+    if(click.id == "libre"&&puedeclick==true){
+      asientosSeleccionados++;
+      click.id= "ocupado";
+      if(click.id=="ocupado"){
+        click.src="./asiento_hover.png"
+      }
+      //alert(click.id);
+    }
+
+if(asientosSeleccionados==nReservados){
+    document.getElementById("btn_reserva").style.display="block";
+}
+
+
+  }
+  //PONER EL BOTON EN DISPLAY BLOCK
+function ElegirAsientos(){
+  /*GUARDAR VALUE EN BD?¿?*/
+  nReservados=document.getElementById("numasientosreservados").value;
+  document.getElementById("formularioReserva").style.display="none";
+  document.getElementById("contenedor").style.display="grid";
+}
+
+function Reserva(){
+  alert("Reserva realizada");
+/*  for(i=0;i<asientos.length;i++)
+  {
+    if(asientos[i].id == "ocupado"){
+      asientosocupados++;
+
+      alert(asientosocupados+"ocupados");
+    }
+  }*/
+}
+/*  //RECORRE ASIENTOS (RECURSO)
+//RECORRER LOS ASIENTOS Y MOSTRAR CUANTOS ESTAN LIBRES U OCUPADOS
+for(i=0;i<asientos.length;i++)
+{
+  if(asientos[i].id == "libre"){
+    //poner un if (asientoslibres<asientosseleccionados) ++ else{boton submit}
+    asientoslibres++;
+    alert(asientoslibres+"libres");
+  }
+  if(asiento[i].id == "ocupado"){
+    asientosocupados++;
+    alert(asientosocupados+"ocupados");
+  }
+}
+*/
+</script>

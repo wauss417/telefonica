@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Página de reserva",
+  "main": "app.js",
+  "scripts": {
+    "test": "prueba"
+  },
+  "keywords": [
+    "reserva",
+    "back",
+    "enda"
+  ],
+  "author": "william a umaña alba",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "express": "^4.17.0",
+    "express-session": "^1.16.1",
+    "mongoose": "^5.5.9"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "devDependencies": {}
+}
