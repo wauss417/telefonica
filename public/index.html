@@ -1,1 +1,58 @@
-hola
+<head>
+  <link rel="stylesheet" type= "text/css" href="./css/style.css">
+</head>
+<script type="text/javascript" src="./js/script.js"></script>
+<body onload="listarFechas();">
+  <div id="reserva">
+    <form id="form">
+      <label for="fechas">Fecha salida:</label>
+      <select id="fechas" onChange="display('pedirAsientos')"></select>
+      <br>
+      <label for="pedirAsientos">Numero de asientos: </label>
+      <input type="number" id="pedirAsientos" name="quantity" class="oculto" min="1" max="5"onChange="display('boton')">
+      <br><br>
+      <button type='button' id='boton' class="oculto" onclick="reservarAsientos();">Elegir asientos</button>
+      <p id="asientosERR"></p>
+    </form>
+  </div>
+  <div id="asientos">
+    <div id="asientosL">
+      <img src="" id="1" class="asiento libre">
+      <img src="" id="2" class="asiento libre">
+      <img src="" id="5" class="asiento libre">
+      <img src="" id="6" class="asiento libre">
+      <img src="" id="9" class="asiento libre">
+      <img src="" id="10" class="asiento libre">
+      <img src="" id="13" class="asiento libre">
+      <img src="" id="14" class="asiento libre">
+      <img src="" id="17" class="asiento libre">
+      <img src="" id="18" class="asiento libre">
+      <img src="" id="21" class="asiento libre">
+      <img src="" id="22" class="asiento libre">
+      <img src="" id="25" class="asiento libre">
+      <img src="" id="26" class="asiento libre">
+      <img src="" id="29" class="asiento libre">
+      <img src="" id="30" class="asiento libre">
+    </div>
+    <div id="pasillo"></div>
+    <div id="asientosR">
+      <img src="" id="3" class="asiento libre">
+      <img src="" id="4" class="asiento libre">
+      <img src="" id="7" class="asiento libre">
+      <img src="" id="8" class="asiento libre">
+      <img src="" id="11" class="asiento libre">
+      <img src="" id="12" class="asiento libre">
+      <img src="" id="15" class="asiento libre">
+      <img src="" id="16" class="asiento libre">
+      <img src="" id="19" class="asiento libre">
+      <img src="" id="20" class="asiento libre">
+      <img src="" id="23" class="asiento libre">
+      <img src="" id="24" class="asiento libre">
+      <img src="" id="27" class="asiento libre">
+      <img src="" id="28" class="asiento libre">
+      <img src="" id="31" class="asiento libre">
+      <img src="" id="32" class="asiento libre">
+    </div>
+    <button id="btn_reserva" onClick="Reserva();">Reservar</button>
+  </div>
+</body>
