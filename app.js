@@ -33,7 +33,6 @@ if (process.env.NODE_ENV == "production"){
 }else{
     mongoose.connect(process.env.MONGODB_URI_LOCAL, {useNewUrlParser: true});
 }
-mongoose.connect(process.env.MONGODB_URI_LOCAL, {useNewUrlParser: true});
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once ("open", function(){
