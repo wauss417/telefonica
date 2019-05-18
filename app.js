@@ -23,14 +23,16 @@ var app = express();
 app.use(express.static("public"));
 app.set("port", process.env.PORT || 8080)
 /*Declaración para manejo de estructuras JSON que comunicaran el servidor con la DB*/
-var bodyParser = require("body-parser");
+var bodyParser = require("body-parser"); 
 app.use(bodyParser.json()); // soporte para bodies codificados en jsonsupport
 app.use(bodyParser.urlencoded({ extended: true })); // soporte para bodies
 /*Declaración de dependencias para manejo de DB con mongoBD*/
 var mongoose = require("mongoose");
-/*Declaración de conexión remota mongoAtlas*/
-const connectionString = "mongodb+srv://admin:journey@spacejourney-0iqdh.mongodb.net/"+baseDeDatos+"?retryWrites=true"
-/*Puerto por defecto para mongo 27017*/
+if (process.env.NODE_ENV != "production"){
+  mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
+}else{
+    mongoose.connect(process.env.MONGODB_URI_LOCAL, {useNewUrlParser: true});
+}
 mongoose.connect(process.env.MONGODB_URI_LOCAL, {useNewUrlParser: true});
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
