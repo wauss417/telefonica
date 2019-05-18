@@ -4,7 +4,8 @@
   "description": "Página de reserva",
   "main": "app.js",
   "scripts": {
-    "test": "prueba"
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "start": "cross-env NODE_ENV=production node app.js"
   },
   "keywords": [
     "reserva",
@@ -15,12 +16,11 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
     "mongoose": "^5.5.9"
-  },
-  "scripts": {
-    "start": "node app.js"
   },
   "devDependencies": {}
 }

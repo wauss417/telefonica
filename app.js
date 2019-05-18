@@ -4,11 +4,12 @@
 *******************************************************************************/
 //mongoimport --host spaceJourney-shard-0/spacejourney-shard-00-00-0iqdh.mongodb.net:27017,spacejourney-shard-00-01-0iqdh.mongodb.net:27017,spacejourney-shard-00-02-0iqdh.mongodb.net:27017 --ssl --username admin --password journey --authenticationDatabase admin --db spacejourney --collection viajes --type json --file viajes.json
 //mongoexport --db spacejourney --collection viajes --out viajes.json
+if (process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
 /*******************************************************************************
   Constantes
 *******************************************************************************/
-/*Declaración del puerto que se usará*/
-const port = 8080;
 /*Declaración de la colecciones que se usaran*/
 const baseDeDatos="spacejourney";
 const colecciones= ["viajes","reservas"];
@@ -20,6 +21,7 @@ var express = require("express");
 var app = express();
 /*Declaración de la localización del Front-End*/
 app.use(express.static("public"));
+app.set("port", process.env.PORT || 8080)
 /*Declaración para manejo de estructuras JSON que comunicaran el servidor con la DB*/
 var bodyParser = require("body-parser");
 app.use(bodyParser.json()); // soporte para bodies codificados en jsonsupport
@@ -28,9 +30,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // soporte para bodies
 var mongoose = require("mongoose");
 /*Declaración de conexión remota mongoAtlas*/
 const connectionString = "mongodb+srv://admin:journey@spacejourney-0iqdh.mongodb.net/"+baseDeDatos+"?retryWrites=true"
-const local = "mongodb://localhost:27017/"+baseDeDatos
 /*Puerto por defecto para mongo 27017*/
-mongoose.connect(local, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI_LOCAL, {useNewUrlParser: true});
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once ("open", function(){
@@ -95,6 +96,6 @@ app.get("/asientos", function (req, res) {
     if (ok){return res.send(ok);}
   });
 });
-var server = app.listen(port, function () {
-    console.log("Servidor corriendo en:"+port);
+var server = app.listen(app.get("port"), function () {
+    console.log("Servidor corriendo en:"+app.get("port"));
 });
