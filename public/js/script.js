@@ -20,7 +20,7 @@ function listarFechas(){
       document.getElementById("fechas").innerHTML = contenido;
     }
   }
-  req.open("GET", "http://localhost:8080/fechas", true);
+  req.open("GET", document.URL+"/fechas", true);
   req.send();
 }
 function reservarAsientos(){
@@ -57,7 +57,7 @@ function reservarAsientos(){
       display("asientos","grid");
     }
   }
-  req.open("GET", "http://localhost:8080/asientos?fecha="+document.getElementById("fechas").value, true);
+  req.open("GET", document.URL+"/asientos?fecha="+document.getElementById("fechas").value, true);
   req.send();
 }
 /*******************************************************************************
@@ -119,7 +119,7 @@ function reserva(){
     }
     display("resumenContenedor","block");
   }
-  req.open("GET", "http://localhost:8080/list?fecha="+document.getElementById("fechas").value+"&asientos="+aReservar, true);
+  req.open("GET", document.URL+"list?fecha="+document.getElementById("fechas").value+"&asientos="+aReservar, true);
   req.send();
 }
 function realizarReserva(){
@@ -129,6 +129,6 @@ function realizarReserva(){
   form =  new formData;
 
   }
-  req.open("PUT", "http://localhost:8080/crearReserva", true);
+  req.open("PUT", document.URL+"crearReserva", true);
   req.send();
 }
