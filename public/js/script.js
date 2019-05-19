@@ -124,7 +124,7 @@ function reserva(){
 }
 function realizarReserva(){
   console.log("vamos a hacer la reserva");
-  et req = new XMLHttpRequest();
+  let req = new XMLHttpRequest();
   req.onreadystatechange = function() {
   form =  new formData;
 
