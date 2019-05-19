@@ -1,6 +1,9 @@
 .oculto{
   display: none;
 }
+.hidden{
+  display: none;
+}
 #asientos{
       position:relative;
       background-color:grey;
@@ -8,7 +11,6 @@
       width:250px;
       height:450px;
       background-color:white;
-      display:grid;
       grid-template-columns:2fr 50px 2fr;
       grid-template-rows: 53px 53px 53px 53px 53px 53px 53px 53px;
       grid-template-areas:"asientosL pasillo asientosR"

@@ -3,6 +3,8 @@ var asientosPedidos;
 var maxAsientos;
 var ocupados=[];
 var aReservar=[];
+var salida;
+var precios={};
 function listarFechas(){
   let req = new XMLHttpRequest();
   displayNone("btn_reserva");
@@ -18,7 +20,7 @@ function listarFechas(){
       document.getElementById("fechas").innerHTML = contenido;
     }
   }
-  req.open("GET", document.URL+"fechas", true);
+  req.open("GET", "http://localhost:8080/fechas", true);
   req.send();
 }
 function reservarAsientos(){
@@ -35,6 +37,8 @@ function reservarAsientos(){
       reservados = contenido[0].reservados;
       maxAsientos = contenido[0].asientos;
       ocupados= contenido[0].ocupado;
+      salida = contenido[0].salida;
+      precios= contenido[0].precio;
       if(reservados+asientosPedidos>maxAsientos){
         document.getElementById("asientosERR").innerHTML = "lo lamentamos, no es posible reservar esta cantidad de asientos al vuelo"
         return;
@@ -49,16 +53,12 @@ function reservarAsientos(){
           obj.src="./imagenes/asiento_disponible.png";
         }
       }
-      /*ocupados.forEach(function(element){
-        let obj = document.getElementById(element);
-        obj.src="./imagenes/asiento_reservado.png";
-        obj.removeEventListener("onclick", CambiarClase);
-        obj.className = "asiento ocupado";
-      });*/
+      document.getElementById("salida").innerHTML="salida desde:"+salida
+      display("asientos","grid");
     }
   }
-  req.open("GET", document.URL+"asientos?fecha="+document.getElementById("fechas").value, true);
-  req.send();;
+  req.open("GET", "http://localhost:8080/asientos?fecha="+document.getElementById("fechas").value, true);
+  req.send();
 }
 /*******************************************************************************
   Funcion: tryParseJSON
@@ -77,8 +77,8 @@ function tryParseJSON (jsonString){
     catch (e) { }
     return false;
 };
-function display(id){
-  document.getElementById(id).style.display="block";
+function display(id,type){
+  document.getElementById(id).style.display=type;
 }
 function displayNone(id){
   document.getElementById(id).style.display="none";
@@ -103,5 +103,32 @@ function CambiarClase(click){
   }
 }
 function reserva(){
+  let req = new XMLHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.responseText=="OK"){
+      document.getElementById("fechaResumen").innerHTML="Fecha para salir (aprox.): "+document.getElementById("fechas").value;
+      document.getElementById("salidaResumen").innerHTML="Para salir desde: "+salida;
+      var auxText=""
+      for(asiento in aReservar){
+        auxText += " " + aReservar[asiento]+","
+      }
+      document.getElementById("asientosResumen").innerHTML="Asientos: "+auxText+" ("+aReservar.length+")";
+      document.getElementById("precioResumen").innerHTML="Precio total: "+(aReservar.length*Object.values(precios)[0])+ " ("+Object.values(precios)[0]+" por asiento)";
+    }else{
+      document.getElementById("asientosERR").innerHTML=req.responseText;
+    }
+    display("resumenContenedor","block");
+  }
+  req.open("GET", "http://localhost:8080/list?fecha="+document.getElementById("fechas").value+"&asientos="+aReservar, true);
+  req.send();
+}
+function realizarReserva(){
+  console.log("vamos a hacer la reserva");
+  et req = new XMLHttpRequest();
+  req.onreadystatechange = function() {
+  form =  new formData;
 
+  }
+  req.open("PUT", "http://localhost:8080/crearReserva", true);
+  req.send();
 }

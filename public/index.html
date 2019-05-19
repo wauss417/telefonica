@@ -1,58 +1,199 @@
+<!DOCTYPE html>
+
 <head>
-  <link rel="stylesheet" type= "text/css" href="./css/style.css">
+    <title>Space Journey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web e-commerce para la reserva y compra de viajes al espacio.">
+    <meta name="author" content="Clara Brígido, Laura Diaz, Alba Perez, Miguel Angel Romero y William Umaña">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.spacejourney.com/">
+    <link rel="shortcut icon" type="" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main01.css" media="(min-width:1200px)">
+    <link rel="stylesheet" type="text/css" href="css/index01.css" media="(min-width:1200px)">
+    <link rel="stylesheet" type="text/css" media="(max-width: 1450px)" href="css/title_port_non_screen.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="(max-width:1200px)">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Montserrat:100,100i,200,200i,400,400i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
 </head>
-<script type="text/javascript" src="./js/script.js"></script>
-<body onload="listarFechas();">
-  <div id="reserva">
-    <form id="form">
-      <label for="fechas">Fecha salida:</label>
-      <select id="fechas" onChange="display('pedirAsientos')"></select>
-      <br>
-      <label for="pedirAsientos">Numero de asientos: </label>
-      <input type="number" id="pedirAsientos" name="quantity" class="oculto" min="1" max="5"onChange="display('boton')">
-      <br><br>
-      <button type='button' id='boton' class="oculto" onclick="reservarAsientos();">Elegir asientos</button>
-      <p id="asientosERR"></p>
-    </form>
-  </div>
-  <div id="asientos">
-    <div id="asientosL">
-      <img src="" id="1" class="asiento libre">
-      <img src="" id="2" class="asiento libre">
-      <img src="" id="5" class="asiento libre">
-      <img src="" id="6" class="asiento libre">
-      <img src="" id="9" class="asiento libre">
-      <img src="" id="10" class="asiento libre">
-      <img src="" id="13" class="asiento libre">
-      <img src="" id="14" class="asiento libre">
-      <img src="" id="17" class="asiento libre">
-      <img src="" id="18" class="asiento libre">
-      <img src="" id="21" class="asiento libre">
-      <img src="" id="22" class="asiento libre">
-      <img src="" id="25" class="asiento libre">
-      <img src="" id="26" class="asiento libre">
-      <img src="" id="29" class="asiento libre">
-      <img src="" id="30" class="asiento libre">
-    </div>
-    <div id="pasillo"></div>
-    <div id="asientosR">
-      <img src="" id="3" class="asiento libre">
-      <img src="" id="4" class="asiento libre">
-      <img src="" id="7" class="asiento libre">
-      <img src="" id="8" class="asiento libre">
-      <img src="" id="11" class="asiento libre">
-      <img src="" id="12" class="asiento libre">
-      <img src="" id="15" class="asiento libre">
-      <img src="" id="16" class="asiento libre">
-      <img src="" id="19" class="asiento libre">
-      <img src="" id="20" class="asiento libre">
-      <img src="" id="23" class="asiento libre">
-      <img src="" id="24" class="asiento libre">
-      <img src="" id="27" class="asiento libre">
-      <img src="" id="28" class="asiento libre">
-      <img src="" id="31" class="asiento libre">
-      <img src="" id="32" class="asiento libre">
-    </div>
-    <button id="btn_reserva" onClick="Reserva();">Reservar</button>
-  </div>
+
+<body>
+    <section id="container">
+        <!-- CABECERA-->
+        <header id="cabecera">
+            <div id="logo"><a href="#"><img src="images/logo.png" alt="logo"></a></div>
+            <a href="#"><h1 id="titulo-pag">Space Journey</h1></a>
+            <nav>
+                <ul id="menu">
+                    <li><a class="vinculo" href="index.html">Inicio</a></li>
+                    <li><a class="vinculo" href="#eslogan">Eslogan</a></li>
+                    <li><a class="vinculo" href="#experiencia">Experiencia</a></li>
+                    <li><a class="vinculo" href="#producto">Servicios</a></li>
+                    <li><a class="vinculo" href="#nosotros">Nosotros</a></li>
+                    <li><a class="vinculo" href="#contacto">Contacto</a></li>
+                </ul>
+
+              <div id="movil">
+                <input type="checkbox" name"menuMovil" id="checkboxMenuMovil">
+                <label for="checkboxMenuMovil"></label>
+                <div id="menu_movil">
+                  <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#eslogan">Eslogan</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#producto">Servicios</a></li>
+                    <li><a href="#quien-somos">Nosotros</a></li>
+                    <li><a href="#conracto">Contacto</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <a id="btn-reserva" href="./reserva.html">Comienza tu viaje</a>
+        </header>
+
+        <!-- CUERPO (Estructura web)-->
+        <section id="contenedor">
+             <!-- Portada -->
+            <article id="portada">
+                <div id="img-square"><img src="images/square-img.png" alt="square"></div>
+                <div id="img-portada"><img src="images/img-prt.png" alt="nave">
+                    <h2 id="screen">
+                        <div id="s">S</div>
+                        <div id="pace">pace</div>
+                        <div id="j">J</div>
+                        <div id="ourney">ourney</div>
+                    </h2>
+                    <h2 id="non-screen">
+                        <div id="space">
+                            <div id="s-ns">S</div>
+                            <div id="pace-ns">pace</div>
+                        </div>
+                        <div id="journey">
+                            <div id="j-ns">J</div>
+                            <div id="ourney-ns">ourney</div>
+                        </div>
+                    </h2>
+                </div>
+            </article>
+
+            <!-- Frase/eslogan -->
+            <article id="eslogan" class="eslog hide">
+                <h3>Viajar al espacio
+                    <p id="title-eslogan">el futuro de nuestro presente</p>
+                </h3>
+                <div id="text-eslogan" class="txt-eslog hide">
+                    <p class="text-regular">Somos una innovadora empresa con una clara misión:</p>
+                    <p class="text-bold">Ser la primera compañía espacial española.</p>
+                    <p class="text-regular">Una nueva generación de turismo futuro que ya es presente. Estamos desarrollando y preparando la operación de una generación de vehículos espaciales. La nave espacial transportará 32 pasajeros al espacio, ¿te imaginas en la luna? ¿en Marte? o en otros destinos del sistema solar.</p>
+                    <p class="text-bold">¡Todo un desafío que ya es posible con SpaceJourney!</p>
+                    <p class="text-regular">Ofrecemos la oportunidad de convertirte en astronauta y experimentar en primera persona la asombrosa sensación de sentir el espacio.</p>
+                </div>
+                <div id="img-eslogan"><img src="images/eslogan.png" alt="eslogan"></div>
+            </article>
+
+            <!-- EXPERIENCIA -->
+            <article id="experiencia" class="exper hide">
+                <div id="img-exper" data-tilt data-tilt-perspective="800" data-tilt-speed="800" data-tilt-scale="1.1" data-tilt-axis="null"><img src="images/experiencia.png" alt="experiencia"></div>
+                <h3 id="title-exper">Viaja al espacio</h3>
+                <div id="text-experi" class="txt-experi hide">
+                    <p class="text-bold">¿Has soñado con viajar a la luna?</p>
+                    <p class="text-regular">Seguro que lo has pensado más de una vez y ahora viajar al espacio es el futuro de nuestro presente.</p>
+                    <p class="text-regular">Se de las primeras personas privilegiadas en tener una perspectiva del universo diferente. Viaja junto a 32 aventureros espaciales a la experiencia de tu vida. Sueña en la luna o en Marte. Siente la gravedad, flota, da volteretas y échate fotos extraordinarias.</p>
+                    <p class="text-regular">Una auténtica expedición con una misión inolvidable. ¡Conquista el espacio con SpaceJourney!</p>
+                </div>
+            </article>
+
+            <!-- PRODUCTO -->
+            <article id="producto" class="prod hide">
+                    <h3>Tecnología</h3>
+                    <div id="text-produ" class="txt-produ hide">
+                        <p class="text-regular">En SpaceJourney nos preocupamos y trabajamos en crear y ofrecer una experiencia diferente, segura e inolvidable para nuestros cliente. </p>
+                        <p class="text-regular">Contamos con una flota de 5 naves espaciales reutilizables modelo WALCM-5x totalmente modernas y equipadas con la última tecnología puntera preparadas para operar en 2020. </p>
+                        <p class="text-regular">Además, están proyectadas 10 nuevas naves para 2030, lo que permitirá a SpaceJourney convertirse en líder del sector espacial.</p>
+                        <p class="text-bold">¿Preparado para viajar a la luna?</p>
+                    </div>
+                    <div class="img-card" data-tilt data-tilt-perspective="800" data-tilt-speed="800" data-tilt-scale="1.3">
+                        <span class="img-nave"></span>
+                    </div>
+            </article>
+
+            <!--QUIEN SOMOS-->
+            <article id="nosotros" class="nos hide">
+                <div id="img-nos"><img src="images/nosotros.png" alt="nosotros"></div>
+                <h3 id="title-nos">Somos SpaceJourney</h3>
+                <h3 id="title-nos-movil">Somos <br> SpaceJourney</h3>
+                <div id="text-noso" class="txt-noso hide">
+                    <p class="text-regular">Somos una innovadora empresa con una clara misión:</p>
+                    <p class="text-regular">Ser la primera compañía Espacial española. Una nueva generación de turismo futuro que ya es presente.</p>
+                    <p class="text-regular">Estamos desarrollando y preparando la operación de una generación de vehículos espaciales. La nave espacial transportará 32 pasajeros al espacio, ¿te imaginas en la luna?¿en Marte? o en otros destinos del sistema solar. Todo un desafío que ya es posible con SpaceJourney.</p>
+                    <p class="text-regular">Ofrecemos la oportunidad de convertirte en astronauta y experimentar en primera persona la asombrosa sensación de sentir el espacio.</p>
+
+                </div>
+            </article>
+
+
+
+
+
+
+
+             <!-- CONTACTO -->
+            <article id="contacto" class="contt hide">
+                <h3>¿Quieres más información?</h3>
+                <p id="sub-title">¡Ponte en contacto con nosotros!</p>
+
+                <!--Formulario de contacto-->
+                <form id="formulario">
+                    <p><input id="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                        <input id="email" type="email" name="email" id="email" placeholder="Email">
+                    </p>
+                    <p><input id="asunto" type="text" name="asunto" id="asunto" placeholder="Asunto">
+                        <input id="pais" type="text" name="pais" id="pais" placeholder="Pais">
+                    </p>
+                    <p><textarea name="mensaje" id="cuadrotexto" rows="10" cols="60" placeholder="Deja tu mensaje"></textarea></p>
+                    <button class="botones">Enviar</button>
+                </form>
+            </article>
+
+
+
+
+
+
+
+
+
+
+        </section>
+        <footer>
+            <!--Copyright-->
+            <div>
+                <p id="copy">Copyright @2019. Grupo SpaceJourney.<br>Todos los derechos reservados.</p>
+            </div>
+            <!--Links pie de página-->
+            <div>
+                <p id="links-footer">
+                    <a href="">Aviso Legal</a> |
+                    <a href="">Política de cookies</a> |
+                    <a href="">Equipo Space Journey</a> | <a href="#contacto">Contacto</a>
+                </p>
+            </div>
+            <ul>
+                <li class="links-rrss"><a href="https://www.linkedin.com"><img src="images/rrss/linkedin.png" alt="linkedin"></a></li>
+                <li class="links-rrss"><a href="https://www.twitter.com"><img src="images/rrss/twitter.png" alt="twitter"></a></li>
+                <li class="links-rrss"><a href="https://www.instagram.com"><img src="images/rrss/instagram.png" alt="instagram"></a></li>
+                <li class="links-rrss"><a href="http://www.facebook.com"><img src="images/rrss/facebook.png" alt="facebook"></a></li>
+            </ul>
+        </footer>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			crossorigin="anonymous"></script>
+    <script src="js/tilt.jquery.js"></script>
+    <!--<script src="js/card.js"></script>-->
+    <script src="js/bg_script.js"></script>
+    <script src="js/scroll.js"></script>
 </body>
+
+</html>

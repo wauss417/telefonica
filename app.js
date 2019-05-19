@@ -97,6 +97,30 @@ app.get("/asientos", function (req, res) {
     if (ok){return res.send(ok);}
   });
 });
+app.get("/list", function(req,res){
+  /*Porcesamos los valores del query para tratar en la busqueda*/
+  var aux= req.query.asientos.split(",");
+  for (var valor in aux){
+    aux[valor]=parseInt(aux[valor]);
+  }
+  /*Buscamos en la base de datos si para la fecha seleecionada, los asientos que vamos a
+  reservar ya están ocupados*/
+  var query ={fecha:req.query.fecha, ocupado:{$in:aux}}
+  viaje.find(query,{},function(err,ok){
+    console.log(ok);
+    if (err){return res.send("error al consultar en la base de datos.");}
+    if (ok){
+        if(ok.length){
+          return res.send("lo sentimos al parecer algunos de los asientos pedido ya están ocupados.");
+        }else {
+          return res.send("OK");
+        }
+    }
+  });
+});
+app.put("/crearReserva",function(req,res){
+
+});
 var server = app.listen(app.get("port"), function () {
     console.log("Servidor corriendo en:"+app.get("port"));
 });
