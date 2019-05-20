@@ -20,7 +20,7 @@ function listarFechas(){
       document.getElementById("fechas").innerHTML = contenido;
     }
   }
-  req.open("GET", document.URL+"/fechas", true);
+  req.open("GET", "/reserva/fechas", true);
   req.send();
 }
 function reservarAsientos(){
@@ -46,18 +46,18 @@ function reservarAsientos(){
       for(let i=1; i<= maxAsientos; i++){
         let obj = document.getElementById(i);
         if(ocupados.includes(i)){
-          obj.src="./imagenes/asiento_reservado.png";
+          obj.src="./images/asiento_reservado.png";
           obj.className = "asiento ocupado";
         }else{
           obj.addEventListener("click",CambiarClase,false);
-          obj.src="./imagenes/asiento_disponible.png";
+          obj.src="./images/asiento_disponible.png";
         }
       }
       document.getElementById("salida").innerHTML="salida desde:"+salida
       display("asientos","grid");
     }
   }
-  req.open("GET", document.URL+"/asientos?fecha="+document.getElementById("fechas").value, true);
+  req.open("GET", "/reserva/asientos?fecha="+document.getElementById("fechas").value, true);
   req.send();
 }
 /*******************************************************************************
@@ -87,14 +87,14 @@ function CambiarClase(click){
   //COMPROBAR SI ES IGUAL EL NUMERO DE ASIENTOS SELECCIONADOS CON LOS RESERVADOS EN EL FORMULARIO
   if(aReservar.length< asientosPedidos && click.target.classList.contains("libre")){
     click.target.className= "asiento seleccionado";
-    click.target.src="./imagenes/asiento_hover.png";
+    click.target.src="./images/asiento_hover.png";
     aReservar.push(click.target.id);
     if(aReservar.length==asientosPedidos){
         document.getElementById("btn_reserva").style.display="block";
     }
   }else if(click.target.classList.contains("seleccionado")){
     click.target.className= "asiento libre";
-    click.target.src="./imagenes/asiento_disponible.png";
+    click.target.src="./images/asiento_disponible.png";
     aReservar = aReservar.filter(function(aReservar){return click.target.id!=aReservar});
     if(aReservar.length<asientosPedidos){
         displayNone("btn_reserva");
@@ -119,7 +119,7 @@ function reserva(){
     }
     display("resumenContenedor","block");
   }
-  req.open("GET", document.URL+"list?fecha="+document.getElementById("fechas").value+"&asientos="+aReservar, true);
+  req.open("GET", "/reserva/list?fecha="+document.getElementById("fechas").value+"&asientos="+aReservar, true);
   req.send();
 }
 function realizarReserva(){
@@ -129,6 +129,6 @@ function realizarReserva(){
   form =  new formData;
 
   }
-  req.open("PUT", document.URL+"crearReserva", true);
+  req.open("PUT", "/crearReserva", true);
   req.send();
 }

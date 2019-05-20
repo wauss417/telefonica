@@ -78,14 +78,14 @@ var viajeSchema = new mongoose.Schema({
 });
 var viaje = mongoose.model('viaje', viajeSchema);
 
-app.get("/fechas", function (req, res) {
+app.get("/reserva/fechas", function (req, res) {
   viaje.find({reservados:{$lt:maxAsientos}},{fecha:1},function(err,ok){
     console.log(ok);
     if (err){return res.send("error al consultar en la base de datos.");}
     if (ok){return res.send(ok);}
   });
 });
-app.get("/asientos", function (req, res) {
+app.get("/reserva/asientos", function (req, res) {
   let query={};
   console.log(req.originalUrl);
   console.log(req.query.fecha);
@@ -97,7 +97,7 @@ app.get("/asientos", function (req, res) {
     if (ok){return res.send(ok);}
   });
 });
-app.get("/list", function(req,res){
+app.get("/reserva/list", function(req,res){
   /*Porcesamos los valores del query para tratar en la busqueda*/
   var aux= req.query.asientos.split(",");
   for (var valor in aux){
@@ -118,7 +118,7 @@ app.get("/list", function(req,res){
     }
   });
 });
-app.put("/crearReserva",function(req,res){
+app.put("/reserva/crearReserva",function(req,res){
 
 });
 var server = app.listen(app.get("port"), function () {

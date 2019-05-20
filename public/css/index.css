@@ -1,127 +1,310 @@
-/* cuerpo */
+/*  CUERPO */
 
-section article {
+#contenedor{
     position: relative;
-    width: 70%;
-    margin: 15%;
-    border: 2px #fff;
-}
-
-#portada{
-    position: relative;
-    height: 500px;
-}
-
-#pcontacto {
-    width: 40%;
-    margin: 10%;
-}
-
-/* titulos */
-
-h1 {
-    position: relative;
-    height: 50px;
-    width: 225px;
+    width: 100%;
     margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    left: 5%;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    color: #fff;
+    grid-area: cuerpo;
 }
-
-h1 a {
-    position: relative;
-    width: 225px;
-    height: 50px;
-    font: 20pt 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin: 5% 0;
-}
-
-h2{
-    font: 20pt 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-
-h3 {
-    font: 20pt 'Montserrat', sans-serif;
-    font-weight: 500;
-    /*margin: 10% 0% 0% 10%;*/
-}
-
-/* articulos */
-
-#portada h2{
-    position: absolute;
-    left: 50%;
-    /*top: 25%;*/
-    font-size: 40pt;
-}
+/* PORTADA */
 #portada{
-    margin-top: 10% !important;
+    position: relative;
+    width: 100%;
+}
+
+#img-square{
+    position: absolute;
+    z-index: 10;
+}
+
+#img-portada{
+    position: relative;
+    width: 60%;
+    margin: 12% 20% 10% 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#screen{
+    position: relative;
+    height: 75px;
+    width: 60%;
+    font: 60pt 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 0 0 0 5%;
+
 }
 
 #img-portada img{
-    width: 30vw;
+    width: 20vw;
 }
 
-#eslogan{
-    justify-content: center;
+#img-square img{
+    width: 40vw;
 }
 
-#eslogan h3 {
-    text-align: center;
+#non-screen{
+    display: none;
 }
 
-#eslogan #texto-eslogan p{
-    position: relative;
-    width: 90%;
-    margin: 5%;
-    text-align: center;
-}
+/* ANIMACIÓN TITULO PORTADA*/
 
-#texto-experiencia{
-    position: relative;
-    width: 60%;
-    margin: 5% 0% 5% 35%;
-}
-
-#img-experiencia{
+#s{
     position: absolute;
-    top: -20%;
+    animation: s 2s ease-in-out;
 }
 
-#producto #texto-producto p{
+@keyframes s{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#pace{
+    position: absolute;
+    left: 8%;
+    animation: pace 6s ease-in-out;
+}
+
+@keyframes pace{
+    0%{
+        opacity: 0;
+    }
+    66%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#j{
+    position: absolute;
+    left: 46%;
+    animation: j 5s ease-in-out;
+}
+@keyframes j{
+    0%{
+        left: 10%;
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    66%{
+        left: 10%;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        left: 46%;
+    }
+}
+#ourney{
+    position: absolute;
+    left: 53%;
+    animation: ourney 6s ease-in-out;
+}
+
+@keyframes ourney{
+    0%{
+        opacity: 0;
+    }
+    66%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* ARTÍCULOS */
+
+/* USO COMÚN */
+h3{
     position: relative;
-    width: 90%;
-    margin: 5%;
-    text-align: center;
+    margin: 0;
+    font: 44pt 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
-#producto h3 {
-    text-align: center;
+.text-regular{
+    font: 14pt 'Lato', sans-serif;
+    font-weight: 300;
 }
 
-#texto-somos{
+.text-bold{
+    font: 14pt 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.hide {
     position: relative;
     width: 80%;
-    margin: 5% 0% 5% 20%;
+    height: auto;
+    margin: 5% 10% 10% 10%;
+    opacity: 0;
+    animation: hide-article 1s ease-out;
 }
 
-#img-experiencia{
+@keyframes hide-article{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.show {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: 5% 10% 10% 10%;
+    opacity: 1;
+    animation: show-article 1s ease-in;
+}
+
+@keyframes show-article{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* ESLOGAN */
+
+#title-eslogan{
+    margin: 0 0 25% 13%;
+    opacity: 1;
+    font-weight: 400;
+
+}
+
+#eslogan h3{
+margin-top: 10%;
+}
+
+#text-eslogan{
+    position: relative;
+    width: 50%;
+    margin: 10% 0% 0% 0%;
+}
+
+#img-eslogan{
     position: absolute;
-    left: 5%;
-    top: 5%;
+    left: 60%;
+    top: 40%;
 }
 
-/* formulario */
+#img-eslogan img{
+    width: 25vw;
+}
 
+/* EXPERIENCIA */
+
+#text-experi {
+    position: relative;
+    width: 50% ;
+    margin: 8% 0 0 50%;
+}
+
+#img-exper{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+}
+
+#title-exper{
+    position: relative;
+    margin: 0 0 0 50%;
+}
+
+/* PRODUCTO */
+
+#text-produ{
+    position: relative;
+    width: 50%;
+    margin: 10% 0% 0% 0%;
+}
+
+.img-card{
+    position: absolute;
+    left: 65%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background: url(../images/card.png)no-repeat center;
+    background-size: contain;
+    transform-style: preserve-3d;
+}
+.img-nave{
+    position: absolute;
+    left: 17%;
+    top: 20%;
+    height: 66%;
+    width: 66%;
+    background: url(../images/nave.png)no-repeat center;
+    background-size: contain;
+    transform: translateZ(60px);
+}
+
+/* NOSOTROS */
+
+#text-noso {
+    position: relative;
+    width: 50% ;
+    margin: 8% 0 0 50%;
+}
+
+#img-nos{
+    position: absolute;
+    width: 24%;
+    height: 80%;
+    margin: 6% 13% 0 13%;
+}
+
+#img-nos img {
+    width: 70%;
+}
+
+#title-nos{
+    position: relative;
+    margin: 0 0 0 50%;
+    display:block;
+}
+#title-nos-movil{
+    position: relative;
+    margin: 0 0 0 50%;
+    display:none;
+}
+
+/* CONTACTO */
 #contacto h3{
     text-align: center;
 }
 
-#contacto p{
+#sub-title{
     text-align: center;
+    font: 12pt 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 #formulario{
@@ -131,7 +314,7 @@ h3 {
 }
 
 input, textarea{
-    background-color: rgb(2, 6, 43);
+    background-color: #00000000;
     margin-bottom: 8px;
     color: #fff;
     border-bottom-color: #fff;
@@ -139,18 +322,19 @@ input, textarea{
     border-top: none;
     border-left: none;
     border-right: none;
+    font: 12pt 'Montserrat', sans-serif;
+    font-weight: 200;
 }
 
 #nombre, #asunto{
     position: relative;
-    width: 35%;
-    margin-right: 14%; 
+    width: 30%;
+    margin-right: 38%;
 }
 
 #email, #pais{
     position: relative;
-    width: 35%;
-    margin-left: 14%; 
+    width: 30%;
 }
 
 textarea{
