@@ -1,74 +1,145 @@
 <head>
-  <link rel="stylesheet" type= "text/css" href="./css/style.css">
+    <title>Space Journey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web e-commerce para la reserva y compra de viajes al espacio.">
+    <meta name="author" content="Clara Brígido, Laura Diaz, Alba Perez, Miguel Angel Romero y William Umaña">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.spacejourney.com/">
+    <link rel="shortcut icon" type="" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./css/reservas.css">
+    <link rel="stylesheet" type="text/css" media="(max-width: 1450px)" href="css/title_port_non_screen.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" media="(max-width:1200px)">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Montserrat:100,100i,200,200i,400,400i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
 </head>
 <script type="text/javascript" src="./js/script.js"></script>
 <body onload="listarFechas();">
-  <div id="reserva">
-    <form id="form">
-      <label for="fechas">Fecha salida:</label>
-      <select id="fechas" onChange="display('pedirAsientos','block')"></select>
-      <br>
-      <label for="pedirAsientos">Numero de asientos: </label>
-      <input type="number" id="pedirAsientos" name="quantity" class="oculto" min="1" max="5"onChange="display('boton','block')">
-      <br><br>
-      <button type='button' id='boton' class="oculto" onclick="reservarAsientos();">Elegir asientos</button>
-      <p id="asientosERR"></p>
-    </form>
-  </div>
-  <p id="salida"></p>
-  <div id="asientos" class="oculto">
-    <div id="asientosL">
-      <img src="" id="1" class="asiento libre">
-      <img src="" id="2" class="asiento libre">
-      <img src="" id="5" class="asiento libre">
-      <img src="" id="6" class="asiento libre">
-      <img src="" id="9" class="asiento libre">
-      <img src="" id="10" class="asiento libre">
-      <img src="" id="13" class="asiento libre">
-      <img src="" id="14" class="asiento libre">
-      <img src="" id="17" class="asiento libre">
-      <img src="" id="18" class="asiento libre">
-      <img src="" id="21" class="asiento libre">
-      <img src="" id="22" class="asiento libre">
-      <img src="" id="25" class="asiento libre">
-      <img src="" id="26" class="asiento libre">
-      <img src="" id="29" class="asiento libre">
-      <img src="" id="30" class="asiento libre">
-    </div>
-    <div id="pasillo"></div>
-    <div id="asientosR">
-      <img src="" id="3" class="asiento libre">
-      <img src="" id="4" class="asiento libre">
-      <img src="" id="7" class="asiento libre">
-      <img src="" id="8" class="asiento libre">
-      <img src="" id="11" class="asiento libre">
-      <img src="" id="12" class="asiento libre">
-      <img src="" id="15" class="asiento libre">
-      <img src="" id="16" class="asiento libre">
-      <img src="" id="19" class="asiento libre">
-      <img src="" id="20" class="asiento libre">
-      <img src="" id="23" class="asiento libre">
-      <img src="" id="24" class="asiento libre">
-      <img src="" id="27" class="asiento libre">
-      <img src="" id="28" class="asiento libre">
-      <img src="" id="31" class="asiento libre">
-      <img src="" id="32" class="asiento libre">
-    </div>
-    <button id="btn_reserva" onClick="reserva();">Reservar</button>
-  </div>
-  <div id="resumenContenedor"  class="oculto">
-    <div id="resumen">
-      <p id="fechaResumen"></p>
-      <p id="salidaResumen"></p>
-      <p id="asientosResumen"></p>
-      <p id="precioResumen"></p>
-    <p id="asientosERR"></p>
-    </div>
-    <form class="fomulario" onsubmit="realizarReserva()">
-      <label for="nombreRserva">Reserva a nombre de:<input type="text" id="nombreReserva" required></label>
-      <label for="correoReserva">Correo electrónico:<input type="email" id="correoReserva" required></label>
-      <label for="tarjetaREsrva">Numero de Tarjeta:<input type="number" id="tarjetaReserva" required></label>
-      <input type="submit" value="hacer reserva">
-    </form>
-  </div>
+  <section id="container">
+    <!-- CABECERA-->
+    <header id="cabecera">
+          <div id="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+          <a href="#"><h1 id="titulo-pag">Space Journey</h1></a>
+          <nav>
+              <ul id="menu">
+                  <li><a class="vinculo" href="index.html">Inicio</a></li>
+                  <li><a class="vinculo" href="index.html#eslogan">Eslogan</a></li>
+                  <li><a class="vinculo" href="index.html#experiencia">Experiencia</a></li>
+                  <li><a class="vinculo" href="index.html#producto">Servicios</a></li>
+                  <li><a class="vinculo" href="index.html#nosotros">Nosotros</a></li>
+                  <li><a class="vinculo" href="index.html#contacto">Contacto</a></li>
+              </ul>
+
+            <div id="movil">
+              <input type="checkbox" name="menuMovil" id="checkboxMenuMovil">
+              <label for="checkboxMenuMovil"></label>
+              <div id="menu_movil">
+                <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="index.html#eslogan">Eslogan</a></li>
+                  <li><a href="index.html#experiencia">Experiencia</a></li>
+                  <li><a href="index.html#producto">Servicios</a></li>
+                  <li><a href="index.html#quien-somos">Nosotros</a></li>
+                  <li><a href="index.html#conracto">Contacto</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section id="contenedor">
+      <!--<div id="img-square"><img src="images/square-img.png" alt="square"></div>-->
+      <div id="formularioReserva">
+        <form id="form">
+          <label for="fechas">Fecha salida:</label>
+          <select id="fechas" onChange="display('pedirAsientos','inline')"></select>
+          <br>
+          <label>Numero de asientos: <input type="number" id="pedirAsientos" name="quantity" class="oculto" min="1" max="5"onChange="display('btn-form','block')"></label>
+          <br><br>
+          <button type='button' id='btn-form' class="oculto" onclick="reservarAsientos();">Elegir asientos</button>
+          <p id="asientosERR"></p>
+        </form>
+      </div>
+      <p id="salida"></p>
+      <div id="asientos" class="oculto">
+        <div id="leyenda"><img src="./images/leyenda_asientos.png" alt=""></div>
+        <div id="asientosL">
+          <img src="" id="1" class="asiento libre">
+          <img src="" id="2" class="asiento libre">
+          <img src="" id="5" class="asiento libre">
+          <img src="" id="6" class="asiento libre">
+          <img src="" id="9" class="asiento libre">
+          <img src="" id="10" class="asiento libre">
+          <img src="" id="13" class="asiento libre">
+          <img src="" id="14" class="asiento libre">
+          <img src="" id="17" class="asiento libre">
+          <img src="" id="18" class="asiento libre">
+          <img src="" id="21" class="asiento libre">
+          <img src="" id="22" class="asiento libre">
+          <img src="" id="25" class="asiento libre">
+          <img src="" id="26" class="asiento libre">
+          <img src="" id="29" class="asiento libre">
+          <img src="" id="30" class="asiento libre">
+        </div>
+        <div id="pasillo"></div>
+        <div id="asientosR">
+          <img src="" id="3" class="asiento libre">
+          <img src="" id="4" class="asiento libre">
+          <img src="" id="7" class="asiento libre">
+          <img src="" id="8" class="asiento libre">
+          <img src="" id="11" class="asiento libre">
+          <img src="" id="12" class="asiento libre">
+          <img src="" id="15" class="asiento libre">
+          <img src="" id="16" class="asiento libre">
+          <img src="" id="19" class="asiento libre">
+          <img src="" id="20" class="asiento libre">
+          <img src="" id="23" class="asiento libre">
+          <img src="" id="24" class="asiento libre">
+          <img src="" id="27" class="asiento libre">
+          <img src="" id="28" class="asiento libre">
+          <img src="" id="31" class="asiento libre">
+          <img src="" id="32" class="asiento libre">
+        </div>
+        <button id="btn_reserva" onClick="reservaCheck();">Continuar</button>
+      </div>
+      <div id="resumenContenedor"  class="oculto">
+        <div id="resumen">
+          <p id="fechaResumen"></p>
+          <p id="salidaResumen"></p>
+          <p id="asientosResumen"></p>
+          <p id="precioResumen"></p>
+        <p id="asientosERR"></p>
+        </div>
+        <form class="formulario">
+          <label for="nombreRserva">Reservar<br>Nombre de:<input type="text" id="nombreReserva" required></label><br>
+          <label for="correoReserva">Correo electrónico:<input type="email" id="correoReserva" required></label><br>
+          <label for="tarjetaResrva">Numero de Tarjeta:<input type="number" id="tarjetaReserva" required></label>
+          <button id="enviarReserva" onClick="realizarReserva();">Reservar</button>
+        </form>
+      </div>
+    </section>
+    <div id="aviso" class="oculto"></div>
+    <footer>
+      <!--Copyright-->
+      <div>
+        <p id="copy">Copyright @2019. Grupo SpaceJourney.<br>Todos los derechos reservados.</p>
+      </div>
+        <!--Links pie de página-->
+        <div>
+          <p id="links-footer">
+            <a href="privacidad.html">Privacidad</a> |
+            <a href="politicadecookies.html">Política de cookies</a> |
+            <a href="equipo.html">Equipo Space Journey</a> |
+            <a href="terminos.html">Terminos y Condiciones</a> |
+            <a href="politicadatos.html">Politica de datos</a> |
+            <a href="index.html#contacto">Contacto</a>
+          </p>
+        </div>
+        <ul>
+          <li class="links-rrss"><a href="https://www.linkedin.com"><img src="images/rrss/linkedin.png" alt="linkedin"></a></li>
+          <li class="links-rrss"><a href="https://www.twitter.com"><img src="images/rrss/twitter.png" alt="twitter"></a></li>
+          <li class="links-rrss"><a href="https://www.instagram.com"><img src="images/rrss/instagram.png" alt="instagram"></a></li>
+          <li class="links-rrss"><a href="http://www.facebook.com"><img src="images/rrss/facebook.png" alt="facebook"></a></li>
+        </ul>
+    </footer>
+  </section>
 </body>

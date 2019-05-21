@@ -9,6 +9,7 @@ position: 0;
 }
 
 
+
 body:before{
 	  content:"";
 	  position:fixed;
@@ -20,9 +21,7 @@ body:before{
     background: url(../images/background.png) repeat;
 }
 
-article{
 
-}
 /* HEADER */
 header {
     position: fixed;
@@ -151,4 +150,28 @@ footer a{
 
 footer ul li a img{
     width: 50%;
+}
+
+
+
+/* Politicas, cookies, terminos y privacidad */
+
+.condiciones{
+    position: relative;
+    width: 80%;
+    margin: 5% 0% 0% 10%;
+    text-align: justify;
+    font-size: 16pt;
+    color: grey;
+
+}
+
+.condiciones h2{
+    font-size: 28pt;
+    color: #fff;
+}
+
+.condiciones h4{
+    font-size: 20pt;
+    color: white;
 }

@@ -15,7 +15,7 @@ function listarFechas(){
       var contenido ="<option value='' disabled selected hidden>Elija fecha...</option>";
       var cantidad = listado.length;
       for(a=0;a<cantidad;a++){
-        contenido = contenido + "<option value='" + listado[a].fecha + "'>" + listado[a].fecha + "</option>";
+        contenido = contenido + "<option class ='black' value='" + listado[a].fecha + "'>" + listado[a].fecha + "</option>";
       }
       document.getElementById("fechas").innerHTML = contenido;
     }
@@ -53,7 +53,8 @@ function reservarAsientos(){
           obj.src="./images/asiento_disponible.png";
         }
       }
-      document.getElementById("salida").innerHTML="salida desde:"+salida
+      displayNone("formularioReserva");
+      document.getElementById("salida").innerHTML="salida desde: "+salida
       display("asientos","grid");
     }
   }
@@ -83,6 +84,10 @@ function display(id,type){
 function displayNone(id){
   document.getElementById(id).style.display="none";
 }
+function eNumber(x){
+  return x.toLocaleString();
+}
+
 function CambiarClase(click){
   //COMPROBAR SI ES IGUAL EL NUMERO DE ASIENTOS SELECCIONADOS CON LOS RESERVADOS EN EL FORMULARIO
   if(aReservar.length< asientosPedidos && click.target.classList.contains("libre")){
@@ -90,7 +95,7 @@ function CambiarClase(click){
     click.target.src="./images/asiento_hover.png";
     aReservar.push(click.target.id);
     if(aReservar.length==asientosPedidos){
-        document.getElementById("btn_reserva").style.display="block";
+        document.getElementById("btn_reserva").style.display="inline";
     }
   }else if(click.target.classList.contains("seleccionado")){
     click.target.className= "asiento libre";
@@ -102,21 +107,23 @@ function CambiarClase(click){
     displayNone("btn_reserva");
   }
 }
-function reserva(){
+function reservaCheck(){
   let req = new XMLHttpRequest();
   req.onreadystatechange = function() {
     if (req.responseText=="OK"){
-      document.getElementById("fechaResumen").innerHTML="Fecha para salir (aprox.): "+document.getElementById("fechas").value;
+      document.getElementById("fechaResumen").innerHTML="Fecha para salir (aprox.):<br>"+document.getElementById("fechas").value;
       document.getElementById("salidaResumen").innerHTML="Para salir desde: "+salida;
       var auxText=""
       for(asiento in aReservar){
         auxText += " " + aReservar[asiento]+","
       }
       document.getElementById("asientosResumen").innerHTML="Asientos: "+auxText+" ("+aReservar.length+")";
-      document.getElementById("precioResumen").innerHTML="Precio total: "+(aReservar.length*Object.values(precios)[0])+ " ("+Object.values(precios)[0]+" por asiento)";
+      document.getElementById("precioResumen").innerHTML="Precio total:<br>"+ eNumber(aReservar.length*Object.values(precios)[0])+ " ("+eNumber(Object.values(precios)[0])+" por asiento)";
     }else{
       document.getElementById("asientosERR").innerHTML=req.responseText;
     }
+    displayNone("asientos");
+    displayNone("salida");
     display("resumenContenedor","block");
   }
   req.open("GET", "/reserva/list?fecha="+document.getElementById("fechas").value+"&asientos="+aReservar, true);
@@ -124,11 +131,20 @@ function reserva(){
 }
 function realizarReserva(){
   console.log("vamos a hacer la reserva");
+  var nombre = document.getElementById('nombreReserva').value;
+  var email = document.getElementById('correoReserva').value;
+  var pago = document.getElementById('tarjetaReserva').value;
+  var fecha = document.getElementById("fechas").value;
+  var datos = 'nombre=' + nombre + '&email=' + email + "&pago=" + pago+"&fecha="+fecha+"&asientos="+aReservar;
   let req = new XMLHttpRequest();
   req.onreadystatechange = function() {
-  form =  new formData;
+    if (req.readyState == 4 && req.status == 200) {
+      display("aviso","block");
+      document.getElementById("aviso").innerHTML="<p>Tu reserva se ha realizado con exito, hemos enviado un correo de confirmación para esta reserva con el id:<br>"+req.responseText+"<br>Anota este numero para cualquier futura consulta</p><button onclick='displayNone('aviso')'>OK</button> "
 
+    }
   }
-  req.open("PUT", "/crearReserva", true);
-  req.send();
+  req.open("PUT", "/reserva/crearReserva", true);
+  req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  req.send(datos);
 }

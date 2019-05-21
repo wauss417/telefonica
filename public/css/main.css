@@ -2,13 +2,22 @@
     position: absolute;
     width: 100%;
     display: grid;
-position: 0;
     grid-template-columns: 100%;
-    grid-template-rows: 60px 100% 471px;
+    grid-template-rows: 60px auto 371px;
     grid-template-areas: "cabecera" "cuerpo" "pie";
 }
-
-
+#contenedor{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    color: #fff;
+    grid-area: cuerpo;
+}
 body:before{
 	  content:"";
 	  position:fixed;
@@ -23,7 +32,7 @@ body:before{
 /* Cookies */
 
 #cookies{
-    position: fixed;
+  position: fixed;
   width: 300px;
   bottom: 50px;
   left:40px;
@@ -165,4 +174,27 @@ footer a{
 
 footer ul li a img{
     width: 50%;
+}
+
+
+
+/* Politicas, cookies, terminos y privacidad */
+
+.condiciones {
+    position: relative;
+    width: 100%;
+    margin: 5% 10% 5% 10%;
+    text-align: justify;
+    font-size: 16pt;
+    color: grey;
+}
+
+.condiciones h2{
+    font-size: 28pt;
+    color: #fff;
+}
+
+.condiciones h4{
+    font-size: 20pt;
+    color: white;
 }

@@ -3,11 +3,30 @@
   padding: 0;}
 
 body {
-  color:white;
+  color: white;
   background: #13031d;
   font-family: Lato;
 }
-
+#container {
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px auto 371px;
+    grid-template-areas: "cabecera" "cuerpo" "pie";
+}
+#contenedor{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    color: #fff;
+    grid-area: cuerpo;
+}
 #background {
   background:repeat;
   background-size: 100% auto;
@@ -31,18 +50,12 @@ a{
   background: purple;
 }
 
-
 .clara { background:none;}
 .miguel { background:none;}
 .william { background:none;}
 .laura { background:none;}
 .alba { background:none;}
 .footer { background:none;}
-
-
-
-
-
 /* HEADER */
 header {
     position: fixed;
@@ -59,14 +72,12 @@ header {
     z-index: 11;
     grid-area: cabecera;
 }
-
 #logo{
     position: relative;
     width: 30%;
     margin: 0% 35%;
     grid-area: clum-01;
 }
-
 #titulo-pag{
     position: relative;
     width: 84%;
@@ -75,15 +86,12 @@ header {
     font-size: 16pt;
     grid-area: clum-02;
 }
-
 header h1{
     margin: 0;
 }
-
 #movil{
     display:none;
 }
-
 #menu{
     position: relative;
     margin: 0% 0% 0% 40%;
@@ -96,12 +104,10 @@ header h1{
     font-size: 10pt;
     grid-area: clum-03;
 }
-
 #menu li a{
     color: #fff;
     margin-right: 20px;
 }
-
 #btn-reserva{
     position: relative;
     height: 40px;
@@ -113,20 +119,17 @@ header h1{
     border: none;
     border-radius: 20px;
 }
-
 a{
     text-decoration: none;
 }
-
 ul{
     list-style-type: none;
 }
-
 /* FOOTER */
 
 footer {
     position: relative;
-    background: url(../image/footer.png) center no-repeat;
+    background: url(../images/footer.png) center no-repeat;
     background-size: cover;
     font: 12pt 'Roboto', sans-serif;
     display: grid;
@@ -139,6 +142,7 @@ footer {
 }
 
 #copy{
+    color: black !important;
     position: relative;
     margin: 10% 20%;
     grid-area: copyright;
@@ -166,14 +170,12 @@ footer ul{
 }
 
 footer a{
-    color: white;
+    color: #000;
 }
 
 footer ul li a img{
     width: 50%;
 }
-
-
 
 
 

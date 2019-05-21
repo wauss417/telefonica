@@ -1,0 +1,277 @@
+
+  #contenedorReserva{
+        position:absolute;
+        margin:auto;
+        width:250px;
+        height:475px;
+        display:grid;
+        grid-template-columns:2fr 50px 2fr;
+        grid-template-rows: 53px 53px 53px 53px 53px 53px 53px 53px;
+        grid-template-areas:"asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR"
+                            "asientosL pasillo asientosR";
+        margin-top:15%;
+        margin-left:40%;
+      }
+      #asientosL{
+      /* background-color:#616161;*/
+        grid-area:asientosL;
+      }
+      #pasillo{
+        /*background-color:#757575;*/
+        grid-area:pasillo;
+      }
+
+      #asientosR{
+        /*background-color: #9e9e9e;*/
+        grid-area:asientosR;
+      }
+      #libre{
+      background-imgage:url("../images/asiento_libre.png");
+      }
+      #ocupado{
+        background-imgage:url("../images/asiento_reservado.png");
+      }
+      .asiento:hover{
+        cursor:pointer;
+
+      }
+
+  #formularioReserva{
+    position:absolute;
+    width:200px;
+    height:200px;
+    left:43%;
+    margin-top:15%;
+  }
+  #formularioReserva p {
+    color:white;
+    position: relative;
+    margin-bottom:2px;
+    font: 15pt 'Montserrat', sans-serif;
+    font-weight: 600;
+
+  }
+  #container {
+      position: absolute;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 60px 100% 471px;
+      grid-template-areas: "cabecera" "cuerpo" "pie";
+      top:0px;
+  }
+
+  .bg{
+      position: fixed;
+      height: 459%;
+      width: 100%;
+      background: url(../images/background.png) repeat;
+      background-size: 100% auto;
+      top: 0;
+      left: 0;
+      z-index: -1
+  }
+
+
+  /* HEADER */
+  header {
+      position: fixed;
+      width: 100%;
+      height: 60px;
+      padding: 0;
+      align-items: center;
+      display: grid;
+      grid-template-columns: 5% 15% 65% 15%;
+      grid-template-rows: 60px;
+      grid-template-areas: "clum-01" "clum-02" "clum-03" "clum-04";
+      background-color: #12031C;
+      font-family: 'Montserrat', sans-serif;
+      z-index: 11;
+      grid-area: cabecera;
+  }
+
+  #logo{
+      position: relative;
+      width: 30%;
+      margin: 0% 35%;
+      grid-area: clum-01;
+  }
+
+  #titulo-pag{
+      position: relative;
+      width: 84%;
+      margin: 0% 8%;
+      color: #fff;
+      font-size: 16pt;
+      grid-area: clum-02;
+  }
+
+  header h1{
+      margin: 0;
+  }
+
+  #movil{
+      display:none;
+  }
+
+  #menu{
+      position: relative;
+      margin: 0% 0% 0% 40%;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      color: #fff;
+      font-size: 10pt;
+      grid-area: clum-03;
+  }
+
+  #menu li a{
+      color: #fff;
+      margin-right: 20px;
+  }
+
+  #btn-reserva{
+      position: relative;
+      height: 40px;
+      width: 70%;
+      margin: 0% 15%;
+      color: #fff;
+      font-size: 10pt;
+      background-color: #771B67;
+      border: none;
+      border-radius: 20px;
+  }
+
+  a{
+      text-decoration: none;
+  }
+
+  ul{
+      list-style-type: none;
+  }
+
+  /* FOOTER */
+
+  footer {
+      position: relative;
+      background: url(.../images/footer.png) center no-repeat;
+      background-size: cover;
+      font: 12pt 'Roboto', sans-serif;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 100%;
+      grid-template-areas: "copyright" "links-ftr" "rrss";
+      align-items: end;
+      z-index: 10;
+      grid-area: pie;
+  }
+
+  #copy{
+      position: relative;
+      margin: 10% 20%;
+      grid-area: copyright;
+  }
+
+  #links-footer{
+      position: relative;
+      text-align: center;
+      margin: 10% 0%;
+      grid-area: links-ftr;
+  }
+
+  .links-rrss{
+      position: relative;
+      grid-area: rrss;
+  }
+
+  footer ul{
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 50%;
+      margin: 10% 0%;
+  }
+
+  footer a{
+      color: #000;
+  }
+
+  footer ul li a img{
+      width: 50%;
+  }
+
+  #portada{
+      position: relative;
+      width: 100%;
+      height:20%;
+  }
+
+  #img-square{
+      position: absolute;
+      z-index: 10;
+      margin-top:5%;
+  }
+
+  #img-portada{
+      position: relative;
+      width: 60%;
+      height:20%;
+      margin: 12% 20% 10% 20%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
+  #leyendaAsientos{
+    position:absolute;
+    background:url(../images/leyenda_asientos.png) center no-repeat;
+    width:420px;
+    height:55px;
+    top:33%;
+    background-size:cover;
+    left:36%;
+  }
+#btn_reserva{
+  position: relative;
+  height: 40px;
+  width: 70%;
+  margin-top:20px;
+  color: #fff;
+  font-size: 10pt;
+  background-color: #771B67;
+  border: none;
+  border-radius: 20px;
+}
+#txt_reserva{
+  position:absolute;
+  height:5%;
+  width:10%;
+  margin-left:43%;
+  margin-top:5%;
+}
+#txt_reserva h3{
+    position: relative;
+    margin: 0;
+    font: 35pt 'Montserrat', sans-serif;
+    font-weight: 600;
+    color:white;
+}
+#btn_form{
+  position: relative;
+  height: 40px;
+  width: 70%;
+  margin-top:20px;
+  color: #fff;
+  font-size: 10pt;
+  background-color: #771B67;
+  border: none;
+  border-radius: 20px;
+}

@@ -5,34 +5,46 @@
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/flexboxgrid.min.css">
     <link rel="stylesheet" type="text/css" href="./css/equipo.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Montserrat:600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
   </head>
-
-
-
-<!-- ..............BODY...................-->
-
+  <!-- ..............BODY...................-->
   <body>
+    <div id="container">
     <!-- CABECERA ok-->
     <header id="cabecera">
-        <div id="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
-        <a href="index.html"><h1 id="titulo-pag">Space Journey</h1></a>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#eslogan">Eslogan</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#producto">Servicios</a></li>
-                <li><a href="#quien-somos">Nosotros</a></li>
-                <li><a href="#conracto">Contacto</a></li>
+      <div id="logo"><a href="#"><img src="images/logo.png" alt="logo"></a></div>
+      <a href="#"><h1 id="titulo-pag">Space Journey</h1></a>
+      <nav>
+          <ul id="menu">
+              <li><a class="vinculo" href="index.html">Inicio</a></li>
+              <li><a class="vinculo" href="index.html#eslogan">Eslogan</a></li>
+              <li><a class="vinculo" href="index.html#experiencia">Experiencia</a></li>
+              <li><a class="vinculo" href="index.html#producto">Servicios</a></li>
+              <li><a class="vinculo" href="index.html#nosotros">Nosotros</a></li>
+              <li><a class="vinculo" href="index.html#contacto">Contacto</a></li>
+          </ul>
+
+        <div id="movil">
+          <input type="checkbox" name="menuMovil" id="checkboxMenuMovil">
+          <label for="checkboxMenuMovil"></label>
+          <div id="menu_movil">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="index.html#eslogan">Eslogan</a></li>
+              <li><a href="index.html#experiencia">Experiencia</a></li>
+              <li><a href="index.html#producto">Servicios</a></li>
+              <li><a href="index.html#quien-somos">Nosotros</a></li>
+              <li><a href="index.html#conracto">Contacto</a></li>
             </ul>
-        </nav>
-        <button id="btn-reserva">Comienza tu viaje</button>
+          </div>
+        </div>
+      </nav>
+      <a href="reserva.html"><button id="btn-reserva">Comienza tu viaje</button></a>
     </header>
-
-<!-- CABECERA-->
-
+    <div id="contenedor">
+      <!-- CABECERA-->
       <div class="row center-xs top-xs">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="titular">
@@ -40,22 +52,13 @@
           </div>
         </div>
       </div>
-
-
-<!-- Fila 2-->
-
+      <!-- Fila 2-->
       <div class="row principal center-xs around-xs top-xs">
-
-
-
-
-
-<!-- Clara -->
-
+        <!-- Clara -->
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2">
           <div class="clara fade">
             <figure id="clara" onclick="displayClara()">
-              <img src="images/clara.png" alt="">
+              <img src="images/clara.png" alt="Clara Brigido">
             </figure>
             <h3>Clara Brígido</h3>
             <div id="text1" class="textos" onclick="displayClara()">
@@ -67,13 +70,11 @@
             </div>
           </div>
         </div>
-
-<!-- Miguel-->
-
+        <!-- Miguel-->
         <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2 ">
           <div class="miguel fade">
             <figure id="miguel" onclick="displayMiguel()">
-              <img src="images/miguel.png" alt="">
+              <img src="images/miguel.png" alt="Miguel Angel Romero">
             </figure>
             <h3>Miguel A. Romero</h3>
               <div id="text2" class="textos" onclick="displayMiguel()">
@@ -81,163 +82,136 @@
                    Imagina Front-end + Adobe Creative Suite...<br>
                    Si quieres sorprenderte de todo lo que soy capaz, conóceme un poquito más:
                   <a target="_blank" href= "https://www.linkedin.com/in/miguelangelromerogomez/">www.linkedin.com</a>
-
                 </p>
               </div>
-          </div>
-        </div>
-
-
-<!-- Willy -->
-
-        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2">
-          <div class="william fade">
-            <figure id="william" onclick="displayWilliam()">
-              <img src="images/william.png" alt="">
-            </figure>
-            <h3>William A. Umaña</h3>
-            <div id="text3" class="textos" onclick="displayWilliam()">
-              <p> Estudiante de ingeniería informatica, un apasionado de las nuevas tecnologías
-                 y los videojuegos y un amante de los gatos. Una personalidad muy curiosa, 
-                 con un gran interes en informatica con ganas de seguir aprendiendo.  <a target="_blank" href= "https://www.linkedin.com/in/williamalexanderumanayepes/">www.linkedin.com</a>
-              </p>
             </div>
           </div>
-        </div>
-
-
-<!-- Laura -->
-        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2">
-          <div class="laura fade">
-            <figure id="laura" onclick="displayLaura()">
-              <img src="images/laura.png" alt="">
-            </figure>
-            <h3>Laura Díaz</h3>
-            <div id="text4" class="textos" onclick="displayLaura()">
-              <p>Graduada en Diseño y especializada como Generalista 3D con Maya.
-                  Desarrolladora Front-End con conocimientos de HTML, CSS y Javascript.
-                  Versátil, creativa, y con muchas ganas de mejorar como profesional. ¿Quieres saber más?
-                <a target="_blank" href= "https://www.linkedin.com/in/marialauradiazmatamoros/">www.linkedin.com</a>
-              </p>
+          <!-- Willy -->
+          <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2">
+            <div class="william fade">
+              <figure id="william" onclick="displayWilliam()">
+                <img src="images/william.png" alt="William A Umaña">
+              </figure>
+              <h3>William A. Umaña</h3>
+              <div id="text3" class="textos" onclick="displayWilliam()">
+                <p> Estudiante de ingeniería informatica, un apasionado de las nuevas tecnologías
+                   y los videojuegos y un amante de los gatos. Una personalidad muy curiosa,
+                   con un gran interes en informatica con ganas de seguir aprendiendo.  <a target="_blank" href= "https://www.linkedin.com/in/williamalexanderumanayepes/">www.linkedin.com</a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-
-
-<!-- Alba -->
-
-        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2">
-          <div class="alba fade">
-            <figure id="alba" onclick="displayAlba()">
-              <img src="images/alba.png" alt="">
-            </figure>
-            <h3>Alba Pérez</h3>
-            <div id="text5" class="textos" onclick="displayAlba()">
-              <p>Formación en diseño y programación de videojuegos en C#, cursada en Front-End
-                 con conocimientos en HTML, CSS, JavaScript y Node.js. <br> Con un gran interés en aprender y ampliar conocimientos.
-                <br><a target="_blank" href= "https://www.linkedin.com/in/albaperezbarranco/">www.linkedin.com</a>
-              </p>
+          <!-- Laura -->
+          <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2">
+            <div class="laura fade">
+              <figure id="laura" onclick="displayLaura()">
+                <img src="images/laura.png" alt="Maria Laura Diaz">
+              </figure>
+              <h3>Laura Díaz</h3>
+              <div id="text4" class="textos" onclick="displayLaura()">
+                <p>Graduada en Diseño y especializada como Generalista 3D con Maya.
+                    Desarrolladora Front-End con conocimientos de HTML, CSS y Javascript.
+                    Versátil, creativa, y con muchas ganas de mejorar como profesional. ¿Quieres saber más?
+                  <a target="_blank" href= "https://www.linkedin.com/in/marialauradiazmatamoros/">www.linkedin.com</a>
+                </p>
+              </div>
             </div>
           </div>
+          <!-- Alba -->
+          <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2">
+            <div class="alba fade">
+              <figure id="alba" onclick="displayAlba()">
+                <img src="images/alba.png" alt="Alba Perez">
+              </figure>
+              <h3>Alba Pérez</h3>
+              <div id="text5" class="textos" onclick="displayAlba()">
+                <p>Formación en diseño y programación de videojuegos en C#, cursada en Front-End
+                   con conocimientos en HTML, CSS, JavaScript y Node.js. <br> Con un gran interés en aprender y ampliar conocimientos.
+                  <br><a target="_blank" href= "https://www.linkedin.com/in/albaperezbarranco/">www.linkedin.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de fila 2-->
         </div>
-
-
-<!-- Fin de fila 2-->
       </div>
+      <!-- FOOTER-->
+      <footer>
+          <!--Copyright-->
+          <div>
+              <p id="copy">Copyright @2019. Grupo SpaceJourney.<br>Todos los derechos reservados.</p>
+          </div>
+          <!--Links pie de página-->
+          <div>
+                  <p id="links-footer">
+                      <a href="privacidad.html">Privacidad</a> |
+                      <a href="politicadecookies.html">Política de cookies</a> |
+                      <a href="equipo.html">Equipo Space Journey</a> |
+                      <a href="terminos.html">Terminos y Condiciones</a> |
+                      <a href="politicadatos.html">Politica de datos</a> |
+                      <a href="index.html#contacto">Contacto</a>
+                  </p>
+          </div>
 
-  <!-- FOOTER-->
-
-  <footer>
-      <!--Copyright-->
-      <div>
-          <p id="copy">Copyright @2019. Grupo SpaceJourney.<br>Todos los derechos reservados.</p>
-      </div>
-      <!--Links pie de página-->
-      <div>
-          <p id="links-footer">
-              <a href="">Aviso Legal</a> |
-              <a href="">Política de cookies</a> |
-              <a href="">Equipo Space Journey</a> | <a href="#contacto">Contacto</a>
-          </p>
-      </div>
-      <ul>
-          <li class="links-rrss"><a href="https://www.linkedin.com"><img src="images/rrss/linkedin.png" alt="linkedin"></a></li>
-          <li class="links-rrss"><a href="https://www.twitter.com"><img src="images/rrss/twitter.png" alt="twitter"></a></li>
-          <li class="links-rrss"><a href="https://www.instagram.com"><img src="images/rrss/instagram.png" alt="instagram"></a></li>
-          <li class="links-rrss"><a href="http://www.facebook.com"><img src="images/rrss/facebook.png" alt="facebook"></a></li>
-      </ul>
-  </footer>
-
-      <script>
-        function displayClara(){
-          var display;
-          var text1 = document.getElementById("text1");
-          display = text1.style.display;
-
-          if (display == "none"){
-            text1.style.display = "block"
-          }
-          else{
-            text1.style.display = "none";
-          }
+          <ul>
+              <li class="links-rrss"><a href="https://www.linkedin.com"><img src="images/rrss/linkedin.png" alt="linkedin"></a></li>
+              <li class="links-rrss"><a href="https://www.twitter.com"><img src="images/rrss/twitter.png" alt="twitter"></a></li>
+              <li class="links-rrss"><a href="https://www.instagram.com"><img src="images/rrss/instagram.png" alt="instagram"></a></li>
+              <li class="links-rrss"><a href="http://www.facebook.com"><img src="images/rrss/facebook.png" alt="facebook"></a></li>
+          </ul>
+      </footer>
+    </div>
+    <script>
+      function displayClara(){
+        var display;
+        var text1 = document.getElementById("text1");
+        display = text1.style.display;
+        if (display == "none"){
+          text1.style.display = "block"
+        }else{
+          text1.style.display = "none";
         }
-      </script>
-      <script>
-        function displayMiguel(){
-          var display;
-          var text1 = document.getElementById("text2");
-          display = text2.style.display;
-
-          if (display == "none"){
-            text2.style.display = "block"
-          }
-          else{
-            text2.style.display = "none";
-          }
+      }
+      function displayMiguel(){
+        var display;
+        var text1 = document.getElementById("text2");
+        display = text2.style.display;
+        if (display == "none"){
+          text2.style.display = "block"
+        } else{
+          text2.style.display = "none";
         }
-      </script>
-      <script>
-        function displayWilliam(){
-          var display;
-          var text3 = document.getElementById("text3");
-          display = text3.style.display;
-
-          if (display == "none"){
-            text3.style.display = "block"
-          }
-          else{
-            text3.style.display = "none";
-          }
+      }
+      function displayWilliam(){
+        var display;
+        var text3 = document.getElementById("text3");
+        display = text3.style.display;
+        if (display == "none"){
+          text3.style.display = "block"
+        }else{
+          text3.style.display = "none";
         }
-      </script>
-      <script>
-        function displayLaura(){
+      }
+      function displayLaura(){
           var display;
           var text4 = document.getElementById("text4");
           display = text4.style.display;
-
-          if (display == "none"){
-            text4.style.display = "block"
-          }
-          else{
-            text4.style.display = "none";
-          }
+        if (display == "none"){
+          text4.style.display = "block"
+        }else{
+          text4.style.display = "none";
         }
-      </script>
-      <script>
-        function displayAlba(){
-          var display;
-          var text5 = document.getElementById("text5");
-          display = text5.style.display;
-
-          if (display == "none"){
-            text5.style.display = "block"
-          }
-          else{
-            text5.style.display = "none";
-          }
+      }
+      function displayAlba(){
+        var display;
+        var text5 = document.getElementById("text5");
+        display = text5.style.display;
+        if (display == "none"){
+          text5.style.display = "block"
+        }else{
+          text5.style.display = "none";
         }
-      </script>
-
+      }
+    </script>
   </body>
 </html>
