@@ -82,11 +82,25 @@ max-height:100%;
 #resumen p{
   font-size: 25px !important;
 }
+#fomularioContenedor{
+  position: relative;
+  display: block;
+  height: 45%;
+  width: 45%;
+  float: left;
+  text-align: center;
+}
 .formulario{
   display: inline;
-  width: 559px;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  left: 0;
   height: 640px;
   padding-top: 30%
+}
+.formulario input{
+  width: 80% !important;
 }
 #aviso{
   position: fixed;

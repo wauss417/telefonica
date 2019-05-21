@@ -107,13 +107,15 @@
           <p id="precioResumen"></p>
         <p id="asientosERR"></p>
         </div>
-        <form class="formulario">
-          <p>Reservar</p>
-          <input type="text" placeholder="Nombre y Apellido" id="nombreReserva" required><br>
-          <input type="email" placeholder="Correo Electrónico" id="correoReserva" required><br>
-          <input type="number" placeholder="Numero de Tarjeta"id="tarjetaReserva" required>
-          <button id="enviarReserva" onClick="realizarReserva();">Reservar</button>
-        </form>
+        <div id="fomularioContenedor">
+          <form class="formulario">
+            <p>Reservar</p>
+            <input type="text" placeholder="Nombre y Apellido" id="nombreReserva" required><br>
+            <input type="email" placeholder="Correo Electrónico" id="correoReserva" required><br>
+            <input type="number" placeholder="Numero de Tarjeta"id="tarjetaReserva" required><br>
+            <button id="btn-form" onClick="realizarReserva();">Reservar</button>
+          </form>
+        </div>
       </div>
     </section>
     <div id="aviso" class="oculto"></div>
