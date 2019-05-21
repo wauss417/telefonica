@@ -19,7 +19,7 @@
     <!-- CABECERA-->
     <header id="cabecera">
           <div id="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
-          <a href="#"><h1 id="titulo-pag">Space Journey</h1></a>
+          <a href="index.html"><h1 id="titulo-pag">Space Journey</h1></a>
           <nav>
               <ul id="menu">
                   <li><a class="vinculo" href="index.html">Inicio</a></li>
@@ -29,7 +29,6 @@
                   <li><a class="vinculo" href="index.html#nosotros">Nosotros</a></li>
                   <li><a class="vinculo" href="index.html#contacto">Contacto</a></li>
               </ul>
-
             <div id="movil">
               <input type="checkbox" name="menuMovil" id="checkboxMenuMovil">
               <label for="checkboxMenuMovil"></label>
@@ -50,10 +49,9 @@
       <!--<div id="img-square"><img src="images/square-img.png" alt="square"></div>-->
       <div id="formularioReserva">
         <form id="form">
-          <label for="fechas">Fecha salida:</label>
           <select id="fechas" onChange="display('pedirAsientos','inline')"></select>
           <br>
-          <label>Numero de asientos: <input type="number" id="pedirAsientos" name="quantity" class="oculto" min="1" max="5"onChange="display('btn-form','block')"></label>
+          <input type="number" id="pedirAsientos" placeholder= "Numero de asientos (Max 4)" name="quantity" class="oculto" min="1" max="4" onChange="display('btn-form','block')">
           <br><br>
           <button type='button' id='btn-form' class="oculto" onclick="reservarAsientos();">Elegir asientos</button>
           <p id="asientosERR"></p>
@@ -110,9 +108,10 @@
         <p id="asientosERR"></p>
         </div>
         <form class="formulario">
-          <label for="nombreRserva">Reservar<br>Nombre de:<input type="text" id="nombreReserva" required></label><br>
-          <label for="correoReserva">Correo electrónico:<input type="email" id="correoReserva" required></label><br>
-          <label for="tarjetaResrva">Numero de Tarjeta:<input type="number" id="tarjetaReserva" required></label>
+          <p>Reservar</p>
+          <input type="text" placeholder="Nombre y Apellido" id="nombreReserva" required><br>
+          <input type="email" placeholder="Correo Electrónico" id="correoReserva" required><br>
+          <input type="number" placeholder="Numero de Tarjeta"id="tarjetaReserva" required>
           <button id="enviarReserva" onClick="realizarReserva();">Reservar</button>
         </form>
       </div>

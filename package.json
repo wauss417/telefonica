@@ -4,8 +4,8 @@
   "description": "Página de reserva",
   "main": "app.js",
   "engines": {
-    "node":"v12.2.0"
- },
+    "node": "v12.2.0"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon app.js",
     "start": "cross-env NODE_ENV=production node app.js",
