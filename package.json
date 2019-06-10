@@ -2,13 +2,15 @@
   "name": "app",
   "version": "1.0.0",
   "description": "Página de reserva",
-  "main": "app.js",
+  "main": "app_express.js",
   "engines": {
     "node": "v12.2.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon app.js",
-    "start": "cross-env NODE_ENV=production node app.js",
+    "dev-express": "cross-env NODE_ENV=development nodemon app_express.js",
+    "dev-restify": "cross-env NODE_ENV=development nodemon app_restify.js",
+    "start": "cross-env NODE_ENV=production node app_express.js",
+    "strat_restify": "cross-env NODE_ENV=production node app_restify.js",
     "postbuild": "npm rebuild"
   },
   "keywords": [
