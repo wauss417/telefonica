@@ -14,7 +14,7 @@
   "keywords": [
     "reserva",
     "back",
-    "enda"
+    "end"
   ],
   "author": "william a umaña alba",
   "license": "ISC",
@@ -25,7 +25,8 @@
     "express": "^4.17.0",
     "express-session": "^1.16.1",
     "mongoose": "^5.5.9",
-    "nodemailer": "^6.1.1"
+    "nodemailer": "^6.1.1",
+    "nodemon": "^1.19.1"
   },
   "devDependencies": {}
 }
