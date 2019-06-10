@@ -99,7 +99,7 @@ var viajeSchema = new mongoose.Schema({
     required: true
   }
 });
-var viaje = mongoose.model('viaje', viajeSchema);
+var viaje = mongoose.model('viajes', viajeSchema);
 
 app.get("/reserva/fechas", function (req, res) {
   viaje.find({reservados:{$lt:maxAsientos}},{fecha:1},function(err,ok){
