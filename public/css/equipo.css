@@ -127,20 +127,6 @@ ul{
 }
 /* FOOTER */
 
-footer {
-    position: relative;
-    background: url(../images/footer.png) center no-repeat;
-    background-size: cover;
-    font: 12pt 'Roboto', sans-serif;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100%;
-    grid-template-areas: "copyright" "links-ftr" "rrss";
-    align-items: end;
-    z-index: 10;
-    grid-area: pie;
-}
-
 #copy{
     color: black !important;
     position: relative;

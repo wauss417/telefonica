@@ -90,7 +90,7 @@ header h1{
 
 #menu{
     position: relative;
-    margin: 0% 0% 0% 40%;
+    margin: 20px 0% 0% 40%;
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -135,7 +135,7 @@ ul{
 
 footer {
     position: relative;
-    background: url(../images/footer.png) center no-repeat;
+    background: url(../images/footer.png) no-repeat;
     background-size: cover;
     font: 12pt 'Roboto', sans-serif;
     display: grid;
